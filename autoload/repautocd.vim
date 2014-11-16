@@ -8,6 +8,9 @@ set cpo&vim
 
 
 function! repautocd#cd(names)
+	if get(g:, 'repautocd_pause', 0)
+		return
+	endif
 	let filepath = expand('%:p')
 	if empty(filepath)
 		return
