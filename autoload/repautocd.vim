@@ -25,7 +25,7 @@ endfunction
 
 function! s:find_dir(find_from, names)
 	let dir = fnamemodify(a:find_from, ':h')
-	while dir != '/'
+	while dir != '/' && dir != '.'
 		for name in a:names
 			let path = dir . '/' . name
 			if isdirectory(path) || filereadable(path)
